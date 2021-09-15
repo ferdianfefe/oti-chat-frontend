@@ -1,18 +1,34 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-card>
+    <v-list-item three-line>
+      <v-list-item-content>
+        <div class="text-overline mb-4">
+          Home
+        </div>
+        <v-list-item-title v-if="!editMode" class="text-h5 mb-1">
+          <h1>OTI-CHAT</h1>
+        </v-list-item-title>
+        <v-list-item-title v-if="!editMode" class="text-h5 mb-1">
+          <h3>Connecting people</h3>
+        </v-list-item-title>
+      </v-list-item-content>
+    </v-list-item>
+  </v-card>
 </template>
-
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
-}
+  data() {
+    return {
+      items: [
+        { title: "Home", icon: "mdi-view-dashboard" },
+        { title: "About", icon: "mdi-forum" },
+      ],
+    };
+  },
+};
 </script>
+<style scoped>
+.content-container {
+  height: 100%;
+}
+</style>
